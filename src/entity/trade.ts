@@ -1,20 +1,29 @@
 import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
-import {Category} from "./Category";
+
 
 @Entity()
-export class Product {
+export class Trade {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({type: "varchar", length: 255})
-    name: string;
+    @Column({type: "int"})
+    userId: number;
 
     @Column({type: "varchar", length: 255})
-    des: string;
+    nameTrade: string;
+
+    @Column({type: "varchar", length: 255})
+    dateTrade: string;
 
     @Column({type: "int"})
-    price: number;
+    amount: number;
 
-    @ManyToOne(() => Category, (category) => category.id)
-    category: Category
+    @Column({type: "varchar"})
+    type: string;
+
+    @Column({type: "int"})
+    tradeTypeId: number;
+    
+
+    
 }
