@@ -5,10 +5,7 @@ export class TradeType {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({type: "int"})
-    userId: number;
-
-    @Column({type: "int"})
-    currentMoney: number;
+    @Column({type: "varchar"})
+    name: string;
 
 }
