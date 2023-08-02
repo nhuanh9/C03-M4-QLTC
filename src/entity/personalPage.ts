@@ -1,11 +1,14 @@
 import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
 
 @Entity()
-export class Category {
+export class personalPage {
     @PrimaryGeneratedColumn()
     id: number;
 
-    @Column({type: "varchar", length: 255})
-    name: string;
+    @Column({type: "int"})
+    userId: number;
+
+    @Column({type: "int"})
+    currentMoney: number;
 
 }
