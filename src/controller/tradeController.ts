@@ -17,5 +17,9 @@ class TradeController {
         let data = await this.tradeService.addTrade(req.body)
         res.json("thêm thu chi thanh cong");
     }
+    currentMoney = async (req: Request, res: Response) => { 
+        let data = await this.tradeService.currentMoney()
+        res.json(data);
+    }
 }
 export default new TradeController();

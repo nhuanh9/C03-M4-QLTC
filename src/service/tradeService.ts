@@ -14,6 +14,8 @@ class TradeService {
     addTrade = async (trade) => {
         await this.Repository.save(trade)
     }
-
+    currentMoney = async () => {
+        return await this.Repository.find()
+    }
 }
 export default new TradeService();
