@@ -16,7 +16,7 @@ export class Trade {
     @Column({type: "varchar", length: 255})
     name: string;
 
-    @Column({type: "varchar", length: 255})
+    @Column({type: "date"})
     date: string;
 
     @Column({type: "int"})

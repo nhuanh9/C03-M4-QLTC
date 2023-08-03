@@ -6,6 +6,11 @@ const TradeRouter = Router();
 // TradeRouter.use(auth)
 TradeRouter.get('', TradeController.getAll)
 TradeRouter.post('/AddTrades', TradeController.addTrade)
+TradeRouter.get('/:id', TradeController.findTrade)
+TradeRouter.put('/:id', TradeController.updateTrade)
+TradeRouter.get('/TradeInMonth', TradeController.showTradeInMonth)
+TradeRouter.get('/ASC', TradeController.ASC)
+
 
 
 
