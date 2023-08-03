@@ -10,4 +10,5 @@ TradeRouter.post('/AddTrade', TradeController.addTrade)
 
 
 
+
 export default TradeRouter;
