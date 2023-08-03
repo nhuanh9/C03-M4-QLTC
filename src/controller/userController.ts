@@ -12,7 +12,7 @@ class UserController {
     getMoney = async (req: Request, res: Response) => { 
         let data = await this.userService.getMoney(req.query.username)
         res.json(data);
-          console.log(data)
+          
     }
 }
 export default new UserController();

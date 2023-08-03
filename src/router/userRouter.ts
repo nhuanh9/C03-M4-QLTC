@@ -4,7 +4,7 @@ import userController from "../controller/userController";
 
 const UserRouter = Router();
 // TradeRouter.use(auth)
-UserRouter.get('/money', userController.getMoney)
+UserRouter.get('/users', userController.getMoney)
 
 
 export default UserRouter;

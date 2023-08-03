@@ -7,10 +7,10 @@ class UserService {
     constructor() {
         this.Repository = AppDataSource.getRepository(User);
     }
-    getMoney = async (money) => {
+    getMoney = async (name) => {
         return await this.Repository.find({
             where : { 
-                currentMoney:  money
+                username:  name
            }
           
         });
