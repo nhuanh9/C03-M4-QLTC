@@ -10,4 +10,4 @@ export const AppDataSource = new DataSource({
     database: "quanlythuchi",
     synchronize: true,
     entities: ["dist/src/entity/*.js"]
-})
+});
