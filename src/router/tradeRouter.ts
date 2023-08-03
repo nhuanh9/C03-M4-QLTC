@@ -4,8 +4,8 @@ import TradeController from "../controller/tradeController";
 
 const TradeRouter = Router();
 // TradeRouter.use(auth)
-TradeRouter.get('', TradeController.getAll)
-TradeRouter.post('/AddTrades', TradeController.addTrade)
+TradeRouter.get('', TradeController.findAll)
+TradeRouter.post('/AddTrade', TradeController.addTrade)
 
 
 

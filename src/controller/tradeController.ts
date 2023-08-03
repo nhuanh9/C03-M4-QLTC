@@ -8,18 +8,23 @@ class TradeController {
     constructor() {
         this.tradeService = TradeService;
     }
-
-    getAll = async (req: Request, res: Response) => { 
-        let data = await this.tradeService.getAll()
-        res.json(data);
+    findAll = async (req: Request, res: Response) => {
+        let find='';
+        if(req.query.name){
+            find = await this.tradeService.nameTrade(req.query.name)
+        }else if(req.query.type) {
+            find = await this.tradeService.findByType(req.query.type)
+        }
+        else{
+            find = await this.tradeService.getAll();
+        }
+        res.json(find);
+        console.log(find)
     }
     addTrade = async (req: Request, res: Response) => { 
         let data = await this.tradeService.addTrade(req.body)
         res.json("thêm thu chi thanh cong");
     }
-    currentMoney = async (req: Request, res: Response) => { 
-        let data = await this.tradeService.currentMoney()
-        res.json(data);
-    }
+
 }
 export default new TradeController();
