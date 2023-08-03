@@ -6,6 +6,8 @@ const TradeRouter = Router();
 // TradeRouter.use(auth)
 TradeRouter.get('', TradeController.findAll)
 TradeRouter.post('/AddTrade', TradeController.addTrade)
+TradeRouter.get('/month', TradeController.findMonth)
+
 
 
 

@@ -35,10 +35,11 @@ class TradeService {
             }
           });   
       }
-    findDate = async (date) => {
+    findDate = async (date,type) => {
         return await this.Repository.find({
             where : {
-                date : date
+                date : date,
+                type : type
             }
         })
     }
@@ -48,5 +49,16 @@ class TradeService {
                 order: {amount: amount}
         })
     }
+    findMonth = async (month) => {
+        try {
+          const tradeData = await this.Repository.createQueryBuilder('trade')
+            .where(`MONTH(trade.date) = :month`, { month })
+            .getMany();
+          return tradeData;
+        } catch (err) {
+          console.error(err);
+          throw new Error('Error retrieving trade data');
+        }
+      };
 }
 export default new TradeService();
