@@ -17,5 +17,9 @@ class TradeController {
         let data = await this.tradeService.addTrade(req.body)
         res.json("thêm thu chi thanh cong");
     }
+    findTradeToday = async (req: Request, res: Response) =>{
+        let data = await this.tradeService.search(req.body)
+        res.json(data);
+    }
 }
 export default new TradeController();

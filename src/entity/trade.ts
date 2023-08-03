@@ -1,4 +1,4 @@
-import {Column, Entity, ManyToOne, PrimaryGeneratedColumn} from "typeorm";
+import {Column, Entity, ManyToOne, OneToMany, PrimaryGeneratedColumn} from "typeorm";
 import { User } from "./user";
 import { TradeType } from "./tradeType";
 
@@ -16,7 +16,7 @@ export class Trade {
     @Column({type: "varchar", length: 255})
     name: string;
 
-    @Column({type: "varchar", length: 255})
+    @Column({type: "date"})
     date: string;
 
     @Column({type: "int"})

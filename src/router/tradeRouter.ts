@@ -6,6 +6,7 @@ const TradeRouter = Router();
 // TradeRouter.use(auth)
 TradeRouter.get('', TradeController.getAll)
 TradeRouter.post('/AddTrades', TradeController.addTrade)
+TradeRouter.get('/:date', TradeController.findTradeToday)
 
 
 
