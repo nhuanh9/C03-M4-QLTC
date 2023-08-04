@@ -6,10 +6,11 @@ import tradeController from "../controller/tradeController";
 const TradeRouter = Router();
 // TradeRouter.use(auth)
 TradeRouter.get('', TradeController.findAll)
-TradeRouter.post('/AddTrade', TradeController.addTrade)
+TradeRouter.post('/add', TradeController.add)
+TradeRouter.delete('/:id', TradeController.delete);
+TradeRouter.put('/:id', TradeController.update);
 TradeRouter.get('/month', TradeController.findMonth)
 TradeRouter.get('', TradeController.getAll)
-TradeRouter.post('/AddTrades', TradeController.addTrade)
 TradeRouter.get('/month', TradeController.searchByMonth)
 TradeRouter.get('/amount', TradeController.findAmount)
 TradeRouter.get('/search',tradeController.searchByDate)

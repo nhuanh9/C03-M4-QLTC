@@ -38,10 +38,25 @@ class TradeController {
         let data = await this.tradeService.getAll()
         res.json(data);
     }
-    addTrade = async (req: Request, res: Response) => {
-        let data = await this.tradeService.addTrade(req.body)
-        res.json("thêm thu chi thanh cong");
+    add = async (req: Request, res: Response) => {
+        let data = await this.tradeService.add(req.body)
+        res.json("thêm thu chi thanh công");
     }
+    update = async (req, res) => {
+        let data = await this.tradeService.update(req.params.id, req.body);
+        res.json(data)
+    }
+    delete = async (req, res) => {
+        let data = await this.tradeService.delete(req.params.id);
+        console.log(data)
+        res.json(data)
+    }
+    findById = async (req, res) => {
+        let data = await this.tradeService.findById(req.params.id);
+        res.json(data)
+    }
+
+
 
     findMonth = async (req: Request, res: Response) => { 
         let data = await this.tradeService.findMonth(req.query.month)
@@ -64,5 +79,6 @@ class TradeController {
         let data = await this.tradeService.findByMonth(req.query.month)
         res.json(data)
     }
+
 }
 export default new TradeController();

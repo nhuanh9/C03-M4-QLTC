@@ -17,6 +17,17 @@ class TradeService {
             }
         });
     }
+
+    add = async (data) => {
+        return await this.Repository.save(data);
+    }
+    delete = async (id) => {
+        return await this.Repository.delete(id);
+    }
+
+    update = async (id, data) => {
+        return await this.Repository.update(id, data);
+    }
     nameTrade = async (name) => {
         return await this.Repository.find({
             where : {
