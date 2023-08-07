@@ -9,7 +9,6 @@ class TradeTypeService{
         this.Repository = AppDataSource.getRepository(TradeType)
     }
 
-
     getAll = async() =>{
         return await this.Repository.find()
     }
@@ -17,10 +16,10 @@ class TradeTypeService{
         await this.Repository.save(tradeType);
     }
     deleteTradeType = async (tradeType) =>{
-        return await this.Repository.deleteTradeType(tradeType)
+        return await this.Repository.delete(tradeType)
     }
     updateTradeType = async (id , tradeType) =>{
-        return await this.Repository.updateTradeType(id , tradeType)
+        return await this.Repository.update(id, tradeType)
     }
     findById = async (id) => {
         return await this.Repository.find({

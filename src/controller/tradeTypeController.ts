@@ -1,5 +1,4 @@
 import {Request, Response} from "express";
-import TradeTypeService from "../service/tradeTypeService";
 import tradeTypeService from "../service/tradeTypeService";
 
 class TradeTypeController{
