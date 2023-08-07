@@ -1,6 +1,7 @@
 import { Trade } from "../entity/trade";
 import {AppDataSource} from "../data-source";
 import { Between } from "typeorm";
+import { Like } from "typeorm";
 
 class TradeService {
     private Repository;
@@ -14,7 +15,7 @@ class TradeService {
     nameTrade = async (name) => {
         return await this.Repository.find({
             where : {
-                name : name
+                name: Like(`%${name}%`),
             }
         })
     }
