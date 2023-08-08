@@ -82,5 +82,8 @@ class TradeService {
           throw new Error('Error retrieving trade data');
         }
       };
+    delete = async (id) => {
+        return await this.repository.delete(id)
+    }
 }
 export default new TradeService();

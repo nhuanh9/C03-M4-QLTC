@@ -47,6 +47,10 @@ class TradeController {
         let data = await this.tradeService.findMonth(req.query.month)
         res.json(data);
     }
-
+    
+    delete = async(req: Request, res: Response) => {
+        let data = await this.tradeService.delete(req.params.id)
+        res.json("xóa thành công");
+    }
 }
 export default new TradeController();
