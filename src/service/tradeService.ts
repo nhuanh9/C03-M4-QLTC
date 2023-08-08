@@ -22,7 +22,7 @@ class TradeService {
         }
         
         if (type) {
-            let tradeType = type === '1' ? 'Revenue' : 'Pay'; // neu type gui len = 1 -> Revenue, nguoc lai type -> Pay
+            let tradeType = type === 'Revenue' ? 'Revenue' : 'Pay'; // neu type gui len = 1 -> Revenue, nguoc lai type -> Pay
             query.andWhere('type = :tradeType', { tradeType });
         }
         
