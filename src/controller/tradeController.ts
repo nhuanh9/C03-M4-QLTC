@@ -52,5 +52,13 @@ class TradeController {
         let data = await this.tradeService.delete(req.params.id)
         res.json("xóa thành công");
     }
+    update =async (req: Request ,res: Response) => {
+        let data = await this.tradeService.update(req.params.id, req.body)
+        res.json("sửa thành công");
+    }
+    findById =async (req: Request ,res: Response) => {
+        let data = await this.tradeService.findById(req.query.id)
+        res.json(data);
+    }
 }
 export default new TradeController();

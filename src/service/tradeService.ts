@@ -85,5 +85,17 @@ class TradeService {
     delete = async (id) => {
         return await this.repository.delete(id)
     }
+    update = async ( id, trade) => {
+        return await this.repository.update(id, trade)
+    }
+    findById = async (id) => {
+        return await this.repository.find({
+            where : {
+                id :id
+            }
+        })
+    }
+
+    
 }
 export default new TradeService();
