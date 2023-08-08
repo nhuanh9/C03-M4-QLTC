@@ -20,7 +20,6 @@ class TradeService {
         if (name) { // neu co name gui len
             query.andWhere('name like :name', { name: `%${name}%` }); // tim kiem gan dung theo name
         }
-        console.log(type);
         
         if (type) {
             let tradeType = type === '1' ? 'Revenue' : 'Pay'; // neu type gui len = 1 -> Revenue, nguoc lai type -> Pay
