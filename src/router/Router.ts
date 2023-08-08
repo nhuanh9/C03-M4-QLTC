@@ -6,6 +6,6 @@ import UserRouter from "./userRouter";
 
 const router = Router();
 router.use('/trades', TradeRouter);
-router.use('/user', UserRouter);
+router.use('', UserRouter);
 
 export default router;

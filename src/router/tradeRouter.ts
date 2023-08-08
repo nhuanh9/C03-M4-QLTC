@@ -1,9 +1,9 @@
 import {Router} from "express";
 import TradeController from "../controller/tradeController";
-// import auth from "../middleware/jwt";
+import auth from "../middleware/jwt";
 
 const TradeRouter = Router();
-// TradeRouter.use(auth)
+TradeRouter.use(auth)
 TradeRouter.get('/findId', TradeController.findById)
 TradeRouter.get('', TradeController.findAll)
 TradeRouter.post('', TradeController.addTrade)
